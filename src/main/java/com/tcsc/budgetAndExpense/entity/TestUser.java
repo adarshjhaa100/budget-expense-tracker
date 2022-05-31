@@ -5,23 +5,23 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
-public class TestEntity {
+@Entity(name="test_user")
+public class TestUser {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String name;
     private String email;
 
-    TestEntity(){}
-    public TestEntity(String name, String email) {
+    TestUser(){}
+    public TestUser(String name, String email) {
         this.name = name;
         this.email = email;
     }
 
-    public TestEntity(TestEntity entity){
-        this.id=entity.getId();
-        this.name=entity.getName();
-        this.email= entity.getEmail();
+    public TestUser(TestUser user){
+        this.id=user.getId();
+        this.name=user.getName();
+        this.email= user.getEmail();
     }
 
     public int getId() {
@@ -50,7 +50,7 @@ public class TestEntity {
 
     @Override
     public String toString() {
-        return "TestEntity{" +
+        return "TestUser{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", email='" + email + '\'' +

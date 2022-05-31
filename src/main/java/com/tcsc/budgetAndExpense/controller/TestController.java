@@ -1,29 +1,33 @@
 package com.tcsc.budgetAndExpense.controller;
 
 
-import com.tcsc.budgetAndExpense.entity.TestEntity;
-import com.tcsc.budgetAndExpense.repo.TestRepo;
+import com.tcsc.budgetAndExpense.entity.TestUser;
+import com.tcsc.budgetAndExpense.repo.TestUserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("test1")
 public class TestController {
-    private final TestRepo testRepo;
+    private final TestUserRepo testUserRepo;
     @Autowired
-    public TestController(TestRepo testRepo) {
-        this.testRepo = testRepo;
+    public TestController(TestUserRepo testUserRepo) {
+        this.testUserRepo = testUserRepo;
     }
 
-    @GetMapping
-    public List<TestEntity> getObjects(){
-        return testRepo.findAll();
+
+    @GetMapping("sampleUser")
+    public List<TestUser> getObjects(){
+        return testUserRepo.findAll();
     }
 
-    @PostMapping
-    public void addObject(@RequestBody TestEntity obj){
-        testRepo.save(new TestEntity(obj));
+    @PostMapping("sampleUser")
+    public void addObject(@RequestBody TestUser obj){
+        testUserRepo.save(new TestUser(obj));
     }
+
+
+
+
 }
