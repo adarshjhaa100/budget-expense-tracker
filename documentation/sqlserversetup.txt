@@ -1,0 +1,22 @@
+Make sure password is highly secure(contains symbol aplhabets number)
+passing volumne as a directory on host filesystem:
+docker run -p 1433:1433 -v mssql-vol/data:/var/opt/mssql/data -v mssql-vol/log:/var/opt/mssql/log -v mssql-vol/secrets:/var/opt/mssql/secrets -d mssql-docker:latest
+
+passing docker volume:
+docker run -p 1433:1433 -v mssql-vol:/var/opt/mssql -d mssql-docker:latest
+
+docker run -e 'ACCEPT_EULA=Y' -e 'MSSQL_SA_PASSWORD=password' -p 1433:1433 -v sqlvolume:/var/opt/mssql -d mcr.microsoft.com/mssql/server:2019-latest
+
+to access mssql cmd:
+export PATH=/opt/mssql-tools/bin/:$PATH
+
+login:
+
+
+/opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P "<YourNewStrong@Passw0rd>"
+
+run query:
+1> SELECT name from sys.Databases;
+2> GO
+
+select name from sys.Databases;

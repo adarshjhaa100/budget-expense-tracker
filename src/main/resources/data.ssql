@@ -4,10 +4,22 @@
 --    name varchar(20) not null,
 --    email varchar(20) not null
 --);
---
+----
 --insert into test_user(name, email) values
 --('John', 'jon@gmail.com'),
 --('sam','sam@gmail.com'),
 --('rudy','rudy@gmail.com');
---
+
+--select * from test_user;
+--insert into product (name, description, user_id) values
+--('Product 1', 'sample desc',1),
+--('Product 2', 'sample desc',1),
+--('Product 3', 'sample desc',1),
+--('Product 4', 'sample desc',2),
+--('Product 5', 'sample desc',2),
+--('Product 6', 'sample desc',3);
+
+
+
+
 ----create table
