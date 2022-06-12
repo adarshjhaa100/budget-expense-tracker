@@ -1,0 +1,19 @@
+USER Management:
+    Register User:/user/register/	
+	Method: POST 
+	Header: 
+	Body:  { "usename":str, "password":str, "email":str}
+	Success Response: { "message":"success", username":str, "id":str}
+	Failure Response: {"message":str}
+    Login User:	/user/login/
+	Method: POST 
+	Header: 
+	Body:  { "usename":str, "password":str}
+    	Success Response: { "message":"success", "token":str } 
+	Failure Response: {"message":str}   
+    Get User Details: /user/{id}
+	Method: GET
+	Header: {"token":str}
+	Body: { "id":str}
+	Success Response:{userDetails}
+	Failure Response: {"message"str, "redirect_url":"/user/login/"}	
